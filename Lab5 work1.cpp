@@ -74,7 +74,7 @@ void problem7() {
     if (num <= 1){
         condition = false;
     } else {
-        for (int i = 2; i <= num; i++){
+        for (int i = 2; i < num; i++){
             if (num%i == 0){
                 condition = true;
                 break;
