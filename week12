@@ -1,0 +1,155 @@
+#include <iostream>
+using namespace std;
+const int SIZE = 4;
+
+//Problem 1
+/*
+double sumColumn (const double m[][SIZE], int rowSize, int columnIndex){
+    double sum = 0;
+    for (int i = 0; i < rowSize; i++){
+        sum += m[i][columnIndex];
+    }
+    return sum;
+}
+int main() {
+    double m[5][SIZE]{
+            {5, 3, 1, 6},
+            {-5, 2, 1, 5},
+            {6, 6, 1, 6},
+            {-3, 11, 2, 55},
+            {0, 4, 0, 4},
+    };
+    int rows = 5;
+    for (int i = 0; i < SIZE; i++) {
+        double columnSum = sumColumn(m, rows, i);
+        cout << "sum of column " << i << "=" << columnSum << endl;
+    }
+    return 0;
+}
+ */
+
+//Problem 2
+/*
+double sumMajorDiagonal(const double m[][SIZE]){
+    double sum = 0;
+    for (int i = 0; i < SIZE; i++){
+        sum += m[SIZE-i][SIZE-i];
+    }
+    return sum;
+}
+int main(){
+    double m[SIZE][SIZE]{
+            {1.0, 2.0, 3.0, 4.0},
+            {5.0, 6.0, 7.0, 8.0,},
+            {9.0, 10.0, 11.0, 12.0,},
+            {13.0, 14.0, 15.0, 16.0,},
+    };
+    cout << sumMajorDiagonal(m);
+}
+*/
+
+//Problem 3
+/*
+void multiplyMatrix(const double a[][SIZE], const double b[][SIZE], double c[][SIZE]){
+    for (int i = 0; i < SIZE; i++){
+        for (int j = 0; j < SIZE; j++){
+            c[i][j] = 0;
+            for (int k = 0; k < SIZE; k++){
+                c[i][j] += a[i][k] * b[k][j];
+            }
+        }
+    }
+    for (int i = 0; i < SIZE; i++){
+        for (int j = 0; j < SIZE; j++){
+            cout << c[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+int main() {
+    double m[SIZE][SIZE]{
+            {1.0, 2.0, 3.0, 4.0},
+            {5.0, 6.0, 7.0, 8.0,},
+            {9.0, 10.0, 11.0, 12.0,},
+            {13.0, 14.0, 15.0, 16.0,},
+    };
+    double n[SIZE][SIZE]{
+            {0.5, 1.5, 2.5, 3.5},
+            {4.5, 5.5, 6.5, 7.5,},
+            {8.5, 9.5, 10.5, 11.5,},
+            {12.5, 13.5, 14.5, 15.5,},
+    };
+    double o[SIZE][SIZE];
+    multiplyMatrix(m, n, o);
+}
+*/
+
+//Problem 4
+/*
+void searchKey(string& s, char& key){
+    for (int i = 0; i < s.length(); i++){
+        if (s[i] == key){
+            cout << "Found";
+            return;
+        }
+    }
+    cout << "Not found";
+}
+int main() {
+    string str;
+    char key;
+    cout << "Enter string: ";
+    getline(cin, str);
+    cout << "Enter search char: ";
+    cin >> key;
+    searchKey(str, key);
+}
+*/
+
+//Problem 5
+/*
+int countChar(string& s, char& key){
+    int count = 0;
+    for (int i = 0; i < s.length(); i++){
+        if (s[i] == key){
+            ++count;
+        }
+    }
+    return count;
+}
+int main() {
+    string str;
+    char key;
+    cout << "Enter string: ";
+    getline(cin, str);
+    cout << "Enter search char: ";
+    cin >> key;
+    cout << countChar(str, key);
+}
+*/
+
+//Problem 6
+void countChars(const char s[], int counts[]){
+    for (int i = 0; s[i] != 0; i++){
+        if (('a' <= s[i] && s[i] <= 'z') || ('A' <= s[i] && s[i] <= 'Z')){
+            char lowerChar = s[i];
+            if (s[i] >= 'A' && s[i] <= 'Z') {
+                lowerChar = s[i] + 32;
+            }
+            counts[lowerChar - 'a']++;
+        }
+    }
+}
+int main() {
+    char str[1000];
+    int counts[26] = {0};
+    cout << "Enter a string: ";
+    cin.getline(str, 1000);
+    countChars(str, counts);
+    cout << "Letter counts:" << endl;
+    for (int i = 0; i < 26; i++) {
+        if (counts[i] > 0) {
+            cout << char(i + 'a') << ":" << counts[i] << endl;
+        }
+    }
+}
