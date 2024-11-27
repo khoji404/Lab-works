@@ -1,0 +1,144 @@
+#include <iostream>
+using namespace std;
+//Problem 1
+// int main() {
+//     int arr[3][4];
+//     for (int i = 0; i < 3; i++) {
+//         for (int j = 0; j < 4; j++) {
+//             cin >> arr[i][j];
+//         }
+//     }
+//     int *ptr = &arr[0][0];
+//     for (int i = 0; i < 12; i++) {
+//         cout << *(ptr + i) << " ";
+//         if ((i + 1) % 4 == 0) {
+//             cout << endl;
+//         }
+//     }
+// }
+
+//Problem 2
+// int main() {
+//     int arr[2][3];
+//     for (int i = 0; i < 2; i++) {
+//         for (int j = 0; j < 3; j++) {
+//             cin >> arr[i][j];
+//         }
+//     }
+//     *(&arr[1][2]) = 100;
+//     for (int i = 0; i < 2; i++) {
+//         for (int j = 0; j < 3; j++) {
+//             cout << arr[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+
+//Problem 3
+// int main() {
+//     int arr[3][4];
+//     for (int i = 0; i < 3; i++) {
+//         for (int j = 0; j < 4; j++) {
+//             cin >> arr[i][j];
+//         }
+//     }
+//     int *ptr = * (arr + 1);
+//     for (int i = 0; i < 4; i++) {
+//         cout << *(ptr++) << " ";
+//     }
+// }
+
+//Problem 4
+// int main() {
+//     int arr[3][3];
+//     int total = 0;
+//     for (int i = 0; i < 3; i++) {
+//         for (int j = 0; j < 3; j++) {
+//             cin >> arr[i][j];
+//         }
+//     }
+//     int *ptr = &arr[0][0];
+//     for (int i = 0; i < 9; i++) {
+//         total += *(ptr + i);
+//     }
+//     cout << total << endl;
+// }
+
+//Problem 5
+// void modifyArray(int *arr, int rows, int cols) {
+//     for (int i = 0; i < rows * cols; i++) {
+//         *(arr + i) = (*(arr + i) * 2);
+//     }
+// }
+// int main() {
+//     int arr[3][3];
+//     for (int i = 0; i < 3; i++) {
+//         for (int j = 0; j < 3; j++) {
+//             cin >> arr[i][j];
+//         }
+//     }
+//     modifyArray(&arr[0][0], 3, 3);
+//     for (int i = 0; i < 3; i++) {
+//         for (int j = 0; j < 3; j++) {
+//             cout << arr[i][j] << " ";
+//         }
+//         cout << endl;
+//     }
+// }
+
+//Problem 6
+// int main() {
+//     int *ptr = new int;
+//     *ptr = 10;
+//     cout << *ptr << endl;
+//     delete ptr;
+// }
+
+//Problem 7
+// int main() {
+//     int *ptr = new int[5];
+//     for (int i = 0; i < 5; i++) {
+//         *(ptr + i) = i + 1;
+//     }
+//     for (int i = 0; i < 5; i++) {
+//         cout << *(ptr + i) << endl;
+//     }
+//     //Memory leak occurs
+//     return 0;
+// }
+
+//Problem 8
+// int main() {
+//     int *ptr = new int[5];
+//     for (int i = 0; i < 5; i++) {
+//         *(ptr + i) = i + 1;
+//     }
+//     for (int i = 0; i < 5; i++) {
+//         cout << *(ptr + i) << endl;
+//     }
+//     delete[] ptr;
+//     return 0;
+// }
+
+//Problem 9
+// int main() {
+//     int *ptr = new int[3] {1, 2, 3};
+//     for (int i = 0; i < 3; i++) {
+//         cout << *(ptr + i) << " ";
+//     }
+//     cout << endl;
+//     int *ptr2 = new int[6];
+//     for (int i = 0; i < 3; i++) {
+//         *(ptr2 + i) = *(ptr + i);
+//     }
+//     for (int i = 0; i < 3; i++) {
+//         *(ptr2 + 3 + i) = i + 4;
+//     }
+//     for (int i = 0; i < 6; i++) {
+//         cout << *(ptr2 + i) << " ";
+//     }
+//     delete[] ptr;
+//     delete[] ptr2;
+// }
+
+//Problem 10
